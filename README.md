@@ -8,9 +8,11 @@ Install selenium:
 open cmd and type _ pip install selenium
 
 Download chromedriver and put directly on C disk
+
 PS version of chromedriver and chrome must be the same. check it in chrome Setting>About Chrome
 
+chromedriver download link
 https://chromedriver.chromium.org/downloads
 
 
-When everything about done download zybook.py file, run and follow simple instructions :) 
+When everything above done download zybook.py file, run and follow simple instructions :) 
