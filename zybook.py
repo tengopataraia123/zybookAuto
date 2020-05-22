@@ -2,12 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
-driver = webdriver.Chrome("C:\\chromedriver.exe")
+driver = webdriver.Chrome("C:/chromedriver.exe")
 
 # In[2]:
 def log_in(username,password,chapter):
 	global driver
-	driver = webdriver.Chrome("/home/mistera/Desktop/zybooks/chromedriver")
 	driver.get("https://learn.zybooks.com/#/signin")
 	driver.find_element_by_xpath('//*[@id="ember936"]').send_keys(username)
 	driver.find_element_by_xpath('//*[@id="ember942"]').send_keys(password)
@@ -46,16 +45,17 @@ def do_multiple():
 
 
 def write():
-    do_short()
-    do_multiple()
-    sleep(10)
-    driver.find_element_by_class_name("next").find_element_by_tag_name("a").click()
-    sleep(3)
+    while True:
+        do_short()
+        do_multiple()
+        sleep(10)
+        driver.find_element_by_class_name("next").find_element_by_tag_name("a").click()
+        sleep(3)
 
 def main():
-	username = raw_input("Enter your zybook email: ")
-	password = raw_input("Enter your zybook password : ")
-	chapter = raw_input("What chapter you what to be done: ")
+	username = input("Enter your zybook email: ")
+	password = input("Enter your zybook password : ")
+	chapter = input("What chapter you what to be done: ")
 
 	log_in(username,password,chapter)
 	sleep(10)
